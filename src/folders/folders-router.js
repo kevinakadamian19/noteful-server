@@ -25,8 +25,7 @@ FoldersRouter
     })
     .post(jsonParser, (req,res,next) => {
         const { name } = req.body
-        const folderId = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
-        const newFolder = { name, folderId }
+        const newFolder = { name}
         
         if(!newFolder) {
             return res.status(400).json({
